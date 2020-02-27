@@ -1,8 +1,11 @@
 {
-  "name": "diemen_project1",
+  "name": "diemen1",
   "version": "1.0.0",
   "description": "project first by study web development",
   "main": "src/index.js",
+  "bin": {
+    "brain-games": "src/bin/brain-games.js"
+  },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
