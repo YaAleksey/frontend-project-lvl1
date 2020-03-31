@@ -22,17 +22,19 @@ jobs:
         # https://github.com/actions/checkout
       - uses: actions/checkout@v2
         # Step's name
+
       - name: Use Node.js ${{ matrix.node-version }}
         # Configures the node version used on GitHub-hosted runners
         # https://github.com/actions/setup-node
         uses: actions/setup-node@v1
         # The Node.js version to configure
         with:
-          node-version: ${{ matrix.node-version }}
-     
+          node-version: ${{ matrix.node-version }} 
         # Add environment variables
         env:
           CI: true
+
       - name: Run linter
         # Run Linter
-        run: make lint
+        run: |
+            make lint
