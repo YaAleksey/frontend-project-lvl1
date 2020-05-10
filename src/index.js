@@ -23,3 +23,7 @@ export const winAnswer = () => {
 export const taskForCalc = () => {
   console.log('What is the result of the expression?');
 };
+
+export const taskForGcd = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+};
