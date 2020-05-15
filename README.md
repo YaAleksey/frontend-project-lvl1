@@ -10,6 +10,11 @@ Asciinema record for install and playing in brain-calc game:
 Asciinema record for playing in brain-gcd game:
 [![asciicast](https://asciinema.org/a/FVh5StNXMnkRiNftZmZU7eMIQ.svg)](https://asciinema.org/a/FVh5StNXMnkRiNftZmZU7eMIQ)
 
+Asciinema record for playing in brain-progression:
+[![asciicast](https://asciinema.org/a/ocDJXLcPzrYnOa7nHhPZN5bf0.svg)](https://asciinema.org/a/ocDJXLcPzrYnOa7nHhPZN5bf0)
+
+
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 

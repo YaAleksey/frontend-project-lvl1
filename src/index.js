@@ -27,3 +27,7 @@ export const taskForCalc = () => {
 export const taskForGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
 };
+
+export const taskForProgression = () => {
+  console.log('What number is missing in the progression?');
+};
