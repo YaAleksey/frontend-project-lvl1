@@ -13,6 +13,9 @@ Asciinema record for playing in brain-gcd game:
 Asciinema record for playing in brain-progression:
 [![asciicast](https://asciinema.org/a/ocDJXLcPzrYnOa7nHhPZN5bf0.svg)](https://asciinema.org/a/ocDJXLcPzrYnOa7nHhPZN5bf0)
 
+Asciinema record for playing in brain-prime:
+[![asciicast](https://asciinema.org/a/kLChAPgWR38jlkCgisktcRr2a.svg)](https://asciinema.org/a/kLChAPgWR38jlkCgisktcRr2a)
+
 
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
