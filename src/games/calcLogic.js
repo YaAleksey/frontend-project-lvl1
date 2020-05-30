@@ -1,5 +1,3 @@
-import readlineSync from 'readline-sync';
-
 import * as index from '../index.js';
 
 const generationNumber = () => Math.round(Math.random() * 100);
@@ -7,6 +5,7 @@ const generationNumber = () => Math.round(Math.random() * 100);
 const getRandom = () => Math.floor(Math.random() * 3 + 1);
 
 let result = 0;
+let array = [];
 
 const logicOfCalc = () => {
   const countFirstGenNumber = generationNumber();
@@ -16,29 +15,20 @@ const logicOfCalc = () => {
 
   if (str[i] === '-') {
     result = countFirstGenNumber - countSecondGenNumber;
-    return console.log(`Question: ${countFirstGenNumber} - ${countSecondGenNumber}`);
   } if (str[i] === '+') {
     result = countFirstGenNumber + countSecondGenNumber;
-    return console.log(`Question: ${countFirstGenNumber} + ${countSecondGenNumber}`);
+  } if (str[i] === '*') {
+    result = countFirstGenNumber * countSecondGenNumber;
   }
-  result = countFirstGenNumber * countSecondGenNumber;
-  return console.log(`Question: ${countFirstGenNumber} * ${countSecondGenNumber}`);
+  array = [result];
+  console.log(`Question: ${countFirstGenNumber} ${str[i]}  ${countSecondGenNumber}`);
+  return array;
 };
 
 const dialogWithGamerCalc = () => {
   index.sayHi();
-  index.taskForCalc();
-  for (let j = 0; j < 3; j += 1) {
-    logicOfCalc();
-    const answerOfCalc = readlineSync.question('You answer:  ');
-    if (answerOfCalc === String(result)) {
-      console.log('Correct!');
-    } else if (answerOfCalc !== String(result)) {
-      console.log(`${answerOfCalc} is wrong answer ;(. Correct answer was ${result}.`);
-      return index.loseAnswer();
-    }
-  }
-  return index.winAnswer();
+  console.log('What is the result of the expression?');
+  index.loop(logicOfCalc);
 };
 
 export default dialogWithGamerCalc;

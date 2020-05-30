@@ -8,10 +8,6 @@ export const sayHi = () => {
   return console.log(`Hello, ${name}!`);
 };
 
-export const taskForEven = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-};
-
 export const loseAnswer = () => {
   console.log(`Let's try again, ${name}!`);
 };
@@ -20,18 +16,16 @@ export const winAnswer = () => {
   console.log(`Congratulations, ${name}`);
 };
 
-export const taskForCalc = () => {
-  console.log('What is the result of the expression?');
-};
-
-export const taskForGcd = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-};
-
-export const taskForProgression = () => {
-  console.log('What number is missing in the progression?');
-};
-
-export const taskForPrime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+export const loop = (funct) => {
+  for (let i = 0; i < 3; i += 1) {
+    const array = funct();
+    const answerFromGamer = readlineSync.question('You answer:  ');
+    if (answerFromGamer === String(array[0])) {
+      console.log('Correct!');
+    } else if (answerFromGamer !== String(array[0])) {
+      console.log(`${answerFromGamer} is wrong answer ;(. Correct answer was ${array[0]}.`);
+      return loseAnswer();
+    }
+  }
+  return winAnswer();
 };

@@ -2,6 +2,11 @@
   "name": "diemen1",
   "version": "1.0.0",
   "description": "project first by study web development",
+  "keywords": [
+    "brain-games",
+    "my first project by hexlet",
+    "improve your brain"
+  ],
   "main": "src/index.js",
   "bin": {
     "brain-games": "src/bin/brain-games.js",

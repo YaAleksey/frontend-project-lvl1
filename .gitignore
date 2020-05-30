@@ -1,2 +1,4 @@
-third
 /node_modules/
+*.log
+**.log
+*.tmp

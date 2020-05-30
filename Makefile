@@ -2,10 +2,15 @@ install:
 	npm install
 
 start:
-	npx node src/bin/brain-even.js
+	node src/bin/brain-even.js
 
 publish:
 	npm publish --dry-run
 
 lint:
-	npx eslint .
+	npx eslint
+
+addCommit:
+	git add --all
+
+

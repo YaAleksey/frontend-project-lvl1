@@ -1,44 +1,34 @@
-import readlineSync from 'readline-sync';
-
 import * as index from '../index.js';
 
 const generationNumber = () => Math.round(Math.random() * 100);
 
-let result = '';
+let rightAnswer = '';
+let array = [];
 
-const logicForFindPrimrNum = () => {
+const logicForFindPrimeNum = () => {
   const num = generationNumber();
   if (num === 0 || num === 1) {
-    result = 'no';
+    rightAnswer = 'no';
   } else if (num === 2) {
-    result = 'yes';
+    rightAnswer = 'yes';
   }
   for (let i = 2; i < num; i += 1) {
     if (num % i !== 0) {
-      result = 'yes';
+      rightAnswer = 'yes';
     } else if (num % i === 0) {
-      console.log(`Question: ${num}?`);
-      result = 'no';
-      return result;
+      rightAnswer = 'no';
+      break;
     }
   }
-  console.log(`Question: ${num}?`);
-  return result;
+  array = [rightAnswer];
+  console.log(`number is: ${num}`);
+  return array;
 };
 
 const findPrimeNum = () => {
   index.sayHi();
-  index.taskForPrime();
-  for (let j = 0; j < 3; j += 1) {
-    logicForFindPrimrNum();
-    const answerOfPrime = readlineSync.question('You answer:  ');
-    if (answerOfPrime === result) {
-      console.log('Correct!');
-    } else if (answerOfPrime !== result) {
-      return index.loseAnswer();
-    }
-  }
-  return index.winAnswer();
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  index.loop(logicForFindPrimeNum);
 };
 
 export default findPrimeNum;
