@@ -1,6 +1,6 @@
 # frontend-project-lvl1
 
-[![Maintainability](https://codeclimate.com/github.com/YaAleksey/frontend-project-lvl1/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github.com/YaAleksey/frontend-project-lvl1/maintainability)
 
 ![Node CI](https://https://github.com/YaAleksey/frontend-project-lvl1/actions)
 
