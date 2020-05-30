@@ -1,5 +1,9 @@
 # frontend-project-lvl1
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+![Node CI](https://github.com/YaAleksey/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
+
 Asciinema record for install and playing in brain-even game:
 
 [![asciicast](https://asciinema.org/a/2O1ubVw3XMXDQGCcAjrZMdhdS.svg)](https://asciinema.org/a/2O1ubVw3XMXDQGCcAjrZMdhdS)
@@ -15,10 +19,3 @@ Asciinema record for playing in brain-progression:
 
 Asciinema record for playing in brain-prime:
 [![asciicast](https://asciinema.org/a/kLChAPgWR38jlkCgisktcRr2a.svg)](https://asciinema.org/a/kLChAPgWR38jlkCgisktcRr2a)
-
-
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-
-
-![Node CI](https://github.com/YaAleksey/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
