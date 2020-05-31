@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/YaAleksey/frontend-project-lvl1/maintainability)
 
-![Node CI](https://github.com/YaAleksey/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/YaAleksey/frontend-project-lvl1/workflows/All%20workflows/badge.svg)
 
 Asciinema record for install and playing in brain-even game:
 
