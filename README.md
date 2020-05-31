@@ -1,8 +1,8 @@
 # frontend-project-lvl1
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github.com/YaAleksey/frontend-project-lvl1/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/YaAleksey/frontend-project-lvl1/maintainability)
 
-![](https://github.com/YaAleksey/frontend-project-lvl1/workflows/badge.svg?branch=master)
+![](https://github.com/YaAleksey/frontend-project-lvl1/actions)
 
 Asciinema record for install and playing in brain-even game:
 
