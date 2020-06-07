@@ -1,34 +1,28 @@
-import * as index from '../index.js';
+import loop from '../index.js';
 
-const generationNumber = () => Math.round(Math.random() * 100);
+import { generationNumber } from '../utils.js';
 
-let rightAnswer = '';
-let array = [];
-
-const logicForFindPrimeNum = () => {
+const getStatusPrimeNum = () => {
   const num = generationNumber();
-  if (num === 0 || num === 1) {
-    rightAnswer = 'no';
-  } else if (num === 2) {
-    rightAnswer = 'yes';
-  }
+  const checkZeroOrOne = (num === 0 || num === 1);
+  let rightAnswer = (checkZeroOrOne) ? false : '';
+  rightAnswer = (num === 2);
   for (let i = 2; i < num; i += 1) {
     if (num % i !== 0) {
-      rightAnswer = 'yes';
+      rightAnswer = true;
     } else if (num % i === 0) {
-      rightAnswer = 'no';
+      rightAnswer = false;
       break;
     }
   }
-  array = [rightAnswer];
-  console.log(`number is: ${num}`);
+  const result = (rightAnswer) ? 'yes' : 'no';
+  const array = [result, 'number is', num, '',
+    'Answer "yes" if given number is prime. Otherwise answer "no".'];
   return array;
 };
 
 const findPrimeNum = () => {
-  index.sayHi();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  index.loop(logicForFindPrimeNum);
+  loop(getStatusPrimeNum);
 };
 
 export default findPrimeNum;

@@ -1,16 +1,12 @@
-import * as index from '../index.js';
+import loop from '../index.js';
 
-const generationNumber = () => Math.round(Math.random() * 100);
+import { generationNumber, getRandomFromOneToThree } from '../utils.js';
 
-const getRandom = () => Math.floor(Math.random() * 3 + 1);
-
-let result = 0;
-let array = [];
-
-const logicOfCalc = () => {
+const getValuesForCalcGame = () => {
   const countFirstGenNumber = generationNumber();
   const countSecondGenNumber = generationNumber();
-  const i = getRandom();
+  let result = 0;
+  const i = getRandomFromOneToThree();
   const str = ' +-*';
 
   if (str[i] === '-') {
@@ -20,15 +16,13 @@ const logicOfCalc = () => {
   } if (str[i] === '*') {
     result = countFirstGenNumber * countSecondGenNumber;
   }
-  array = [result];
-  console.log(`Question: ${countFirstGenNumber} ${str[i]}  ${countSecondGenNumber}`);
+  const array = [result, countFirstGenNumber, str[i], countSecondGenNumber,
+    'What is the result of the expression?'];
   return array;
 };
 
 const dialogWithGamerCalc = () => {
-  index.sayHi();
-  console.log('What is the result of the expression?');
-  index.loop(logicOfCalc);
+  loop(getValuesForCalcGame);
 };
 
 export default dialogWithGamerCalc;

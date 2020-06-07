@@ -1,20 +1,18 @@
-import * as index from '../index.js';
+import loop from '../index.js';
 
-const generationNumber = () => Math.round(Math.random() * 100);
-let array = [];
+import { generationNumber } from '../utils.js';
 
-const logicForEven = () => {
+const getEvenStatus = () => {
   const genNumber = generationNumber();
-  const result = (genNumber % 2 === 0) ? 'yes' : 'no';
-  array = [result];
-  console.log(`Question: ${genNumber}`);
+  const checkForEven = (genNumber % 2 === 0);
+  const result = (checkForEven) ? 'yes' : 'no';
+  const array = [result, genNumber, '', '',
+    'Answer "yes" if the number is even, otherwise answer "no".'];
   return array;
 };
 
 const dialogWithGamer = () => {
-  index.sayHi();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  index.loop(logicForEven);
+  loop(getEvenStatus);
 };
 
 export default dialogWithGamer;
