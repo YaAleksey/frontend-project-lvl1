@@ -1,6 +1,6 @@
 import runEngineGames from '../index.js';
 
-import { genNumber } from '../utils.js';
+import genNumber from '../utils.js';
 
 const genDataForGame = () => {
   const randomNumber = genNumber(0, 100);

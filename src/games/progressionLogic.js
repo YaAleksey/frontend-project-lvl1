@@ -1,6 +1,6 @@
 import runEngineGames from '../index.js';
 
-import { genNumber } from '../utils.js';
+import genNumber from '../utils.js';
 
 const genDataForGame = () => {
   let firstPartProgression = '';
@@ -13,7 +13,7 @@ const genDataForGame = () => {
     i += stepForMakeProgression) {
     firstPartProgression += ` ${String(i)}`;
   }
-  for (let j = (stepForMakeProgression * indexWithoutElement + startNumber); 
+  for (let j = (stepForMakeProgression * indexWithoutElement + startNumber);
     j <= (stepForMakeProgression * 9 + startNumber); j += stepForMakeProgression) {
     secondPartProgression += ` ${String(j)}`;
   }
