@@ -1,28 +1,28 @@
-import loop from '../index.js';
+import runEngineGames from '../index.js';
 
-import { generationNumber, getRandomFromOneToThree } from '../utils.js';
+import { genNumber } from '../utils.js';
 
-const getValuesForCalcGame = () => {
-  const countFirstGenNumber = generationNumber();
-  const countSecondGenNumber = generationNumber();
-  let result = 0;
-  const i = getRandomFromOneToThree();
-  const str = ' +-*';
+const genDataForGame = () => {
+  const countFirstGenNumber = genNumber(0, 100);
+  const countSecondGenNumber = genNumber(0, 100);
+  let rightAnswer = 0;
+  const randomIndex = genNumber(0, 2);
+  const setOperations = '+-*';
 
-  if (str[i] === '-') {
-    result = countFirstGenNumber - countSecondGenNumber;
-  } if (str[i] === '+') {
-    result = countFirstGenNumber + countSecondGenNumber;
-  } if (str[i] === '*') {
-    result = countFirstGenNumber * countSecondGenNumber;
+  if (setOperations[randomIndex] === '-') {
+    rightAnswer = countFirstGenNumber - countSecondGenNumber;
+  } if (setOperations[randomIndex] === '+') {
+    rightAnswer = countFirstGenNumber + countSecondGenNumber;
+  } if (setOperations[randomIndex] === '*') {
+    rightAnswer = countFirstGenNumber * countSecondGenNumber;
   }
-  const array = [result, countFirstGenNumber, str[i], countSecondGenNumber,
-    'What is the result of the expression?'];
+  const array = [rightAnswer, countFirstGenNumber, setOperations[randomIndex],
+    countSecondGenNumber, 'What is the result of the expression?'];
   return array;
 };
 
-const dialogWithGamerCalc = () => {
-  loop(getValuesForCalcGame);
+const runGame = () => {
+  runEngineGames(genDataForGame);
 };
 
-export default dialogWithGamerCalc;
+export default runGame;

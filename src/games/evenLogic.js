@@ -1,18 +1,18 @@
-import loop from '../index.js';
+import runEngineGames from '../index.js';
 
-import { generationNumber } from '../utils.js';
+import { genNumber } from '../utils.js';
 
-const getEvenStatus = () => {
-  const genNumber = generationNumber();
-  const checkForEven = (genNumber % 2 === 0);
-  const result = (checkForEven) ? 'yes' : 'no';
-  const array = [result, genNumber, '', '',
+const genDataForGame = () => {
+  const randomNumber = genNumber(0, 100);
+  const isNumberEven = (randomNumber % 2 === 0);
+  const rightAnswer = (isNumberEven) ? 'yes' : 'no';
+  const array = [rightAnswer, randomNumber, '', '',
     'Answer "yes" if the number is even, otherwise answer "no".'];
   return array;
 };
 
-const dialogWithGamer = () => {
-  loop(getEvenStatus);
+const runGame = () => {
+  runEngineGames(genDataForGame);
 };
 
-export default dialogWithGamer;
+export default runGame;

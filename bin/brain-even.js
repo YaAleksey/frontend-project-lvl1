@@ -1,5 +1,5 @@
 #! /usr/bin/env node
 
-import dialogWithGamer from '../src/games/evenLogic.js';
+import runGame from '../src/games/evenLogic.js';
 
-dialogWithGamer();
+runGame();

@@ -1,28 +1,28 @@
-import loop from '../index.js';
+import runEngineGames from '../index.js';
 
-import { generationNumber } from '../utils.js';
+import { genNumber } from '../utils.js';
 
-const getStatusPrimeNum = () => {
-  const num = generationNumber();
-  const checkZeroOrOne = (num === 0 || num === 1);
-  let rightAnswer = (checkZeroOrOne) ? false : '';
-  rightAnswer = (num === 2);
-  for (let i = 2; i < num; i += 1) {
-    if (num % i !== 0) {
-      rightAnswer = true;
-    } else if (num % i === 0) {
-      rightAnswer = false;
+const genDataForGame = () => {
+  const randomNumber = genNumber(0, 100);
+  const checkZeroOrOne = (randomNumber === 0 || randomNumber === 1);
+  let isNumberPrime = (checkZeroOrOne) ? false : '';
+  isNumberPrime = (randomNumber === 2);
+  for (let i = 2; i < randomNumber; i += 1) {
+    if (randomNumber % i !== 0) {
+      isNumberPrime = true;
+    } else if (randomNumber % i === 0) {
+      isNumberPrime = false;
       break;
     }
   }
-  const result = (rightAnswer) ? 'yes' : 'no';
-  const array = [result, 'number is', num, '',
+  const rightAnswer = (isNumberPrime) ? 'yes' : 'no';
+  const array = [rightAnswer, 'number is', randomNumber, '',
     'Answer "yes" if given number is prime. Otherwise answer "no".'];
   return array;
 };
 
-const findPrimeNum = () => {
-  loop(getStatusPrimeNum);
+const runGame = () => {
+  runEngineGames(genDataForGame);
 };
 
-export default findPrimeNum;
+export default runGame;

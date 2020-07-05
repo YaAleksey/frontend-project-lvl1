@@ -1,28 +1,30 @@
-import loop from '../index.js';
+import runEngineGames from '../index.js';
 
-import { generationNumber, gen1To10 } from '../utils.js';
+import { genNumber } from '../utils.js';
 
-const getLoseElement = () => {
-  let result1 = '';
-  let result2 = '';
-  const genNum1 = generationNumber();
-  const genNum2 = gen1To10(0.1, 10);
-  const genNum3 = gen1To10(0.1, 10);
+const genDataForGame = () => {
+  let firstPartProgression = '';
+  let secondPartProgression = '';
+  const startNumber = genNumber(0, 100);
+  const stepForMakeProgression = genNumber(1, 10);
+  const indexWithoutElement = genNumber(1, 10);
 
-  for (let i = genNum1; i < (genNum2 * (genNum3 - 1) + genNum1); i += genNum2) {
-    result1 += ` ${String(i)}`;
+  for (let i = startNumber; i < (stepForMakeProgression * (indexWithoutElement - 1) + startNumber);
+    i += stepForMakeProgression) {
+    firstPartProgression += ` ${String(i)}`;
   }
-  for (let j = (genNum2 * genNum3 + genNum1); j <= (genNum2 * 9 + genNum1); j += genNum2) {
-    result2 += ` ${String(j)}`;
+  for (let j = (stepForMakeProgression * indexWithoutElement + startNumber); 
+    j <= (stepForMakeProgression * 9 + startNumber); j += stepForMakeProgression) {
+    secondPartProgression += ` ${String(j)}`;
   }
-  const result = ((genNum3 - 1) * genNum2 + genNum1);
-  const array = [result, result1, '..', result2,
+  const rightAnswer = ((indexWithoutElement - 1) * stepForMakeProgression + startNumber);
+  const array = [rightAnswer, firstPartProgression, '..', secondPartProgression,
     'What number is missing in the progression?'];
   return array;
 };
 
-const progression = () => {
-  loop(getLoseElement);
+const runGame = () => {
+  runEngineGames(genDataForGame);
 };
 
-export default progression;
+export default runGame;
