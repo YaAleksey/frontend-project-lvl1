@@ -2,27 +2,29 @@ import runEngineGames from '../index.js';
 
 import genNumber from '../utils.js';
 
+const task = 'What is the result of the expression?';
+
 const genDataForGame = () => {
-  const countFirstGenNumber = genNumber(0, 100);
-  const countSecondGenNumber = genNumber(0, 100);
+  const firstNumber = genNumber(0, 100);
+  const secondNumber = genNumber(0, 100);
   let rightAnswer = 0;
   const randomIndex = genNumber(0, 2);
   const setOperations = '+-*';
 
   if (setOperations[randomIndex] === '-') {
-    rightAnswer = countFirstGenNumber - countSecondGenNumber;
+    rightAnswer = firstNumber - secondNumber;
   } if (setOperations[randomIndex] === '+') {
-    rightAnswer = countFirstGenNumber + countSecondGenNumber;
+    rightAnswer = firstNumber + secondNumber;
   } if (setOperations[randomIndex] === '*') {
-    rightAnswer = countFirstGenNumber * countSecondGenNumber;
+    rightAnswer = firstNumber * secondNumber;
   }
-  const array = [rightAnswer, countFirstGenNumber, setOperations[randomIndex],
-    countSecondGenNumber, 'What is the result of the expression?'];
-  return array;
+  const question = `${firstNumber} ${setOperations[randomIndex]} ${secondNumber}`;
+
+  return [String(question), String(rightAnswer)];
 };
 
 const runGame = () => {
-  runEngineGames(genDataForGame);
+  runEngineGames(task, genDataForGame);
 };
 
 export default runGame;

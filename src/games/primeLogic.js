@@ -2,11 +2,11 @@ import runEngineGames from '../index.js';
 
 import genNumber from '../utils.js';
 
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const genDataForGame = () => {
   const randomNumber = genNumber(0, 100);
-  const checkZeroOrOne = (randomNumber === 0 || randomNumber === 1);
-  let isNumberPrime = (checkZeroOrOne) ? false : '';
-  isNumberPrime = (randomNumber === 2);
+  let isNumberPrime = (randomNumber === 2);
   for (let i = 2; i < randomNumber; i += 1) {
     if (randomNumber % i !== 0) {
       isNumberPrime = true;
@@ -16,13 +16,12 @@ const genDataForGame = () => {
     }
   }
   const rightAnswer = (isNumberPrime) ? 'yes' : 'no';
-  const array = [rightAnswer, 'number is', randomNumber, '',
-    'Answer "yes" if given number is prime. Otherwise answer "no".'];
-  return array;
+  const question = randomNumber;
+  return [String(question), String(rightAnswer)];
 };
 
 const runGame = () => {
-  runEngineGames(genDataForGame);
+  runEngineGames(task, genDataForGame);
 };
 
 export default runGame;

@@ -2,25 +2,26 @@ import runEngineGames from '../index.js';
 
 import genNumber from '../utils.js';
 
+const task = 'Find the greatest common divisor of given numbers.';
+
 const genDataForGame = () => {
-  const firstGenNum = genNumber(0, 100);
-  const secondGenNum = genNumber(0, 100);
+  const firstNumber = genNumber(0, 100);
+  const secondNumber = genNumber(0, 100);
   let rightAnswer = 0;
-  const findLeastNumber = (firstGenNum === secondGenNum || firstGenNum < secondGenNum);
-  const divisorForStart = (findLeastNumber) ? firstGenNum : secondGenNum;
+  const divisorForStart = (firstNumber === secondNumber || firstNumber < secondNumber)
+    ? firstNumber : secondNumber;
   for (let i = divisorForStart; i > 0; i -= 1) {
-    if (firstGenNum % i === 0 && secondGenNum % i === 0) {
+    if (firstNumber % i === 0 && secondNumber % i === 0) {
       rightAnswer = i;
       break;
     }
   }
-  const array = [rightAnswer, firstGenNum, secondGenNum, '',
-    'Find the greatest common divisor of given numbers.'];
-  return array;
+  const question = `${firstNumber}   ${secondNumber}`;
+  return [String(question), String(rightAnswer)];
 };
 
 const runGame = () => {
-  runEngineGames(genDataForGame);
+  runEngineGames(task, genDataForGame);
 };
 
 export default runGame;

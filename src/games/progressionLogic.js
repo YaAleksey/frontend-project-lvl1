@@ -2,6 +2,8 @@ import runEngineGames from '../index.js';
 
 import genNumber from '../utils.js';
 
+const task = 'What number is missing in the progression?';
+
 const genDataForGame = () => {
   let firstPartProgression = '';
   let secondPartProgression = '';
@@ -18,13 +20,12 @@ const genDataForGame = () => {
     secondPartProgression += ` ${String(j)}`;
   }
   const rightAnswer = ((indexWithoutElement - 1) * stepForMakeProgression + startNumber);
-  const array = [rightAnswer, firstPartProgression, '..', secondPartProgression,
-    'What number is missing in the progression?'];
-  return array;
+  const question = `${firstPartProgression} ...${secondPartProgression}`;
+  return [String(question), String(rightAnswer)];
 };
 
 const runGame = () => {
-  runEngineGames(genDataForGame);
+  runEngineGames(task, genDataForGame);
 };
 
 export default runGame;
