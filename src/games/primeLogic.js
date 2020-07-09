@@ -4,20 +4,24 @@ import genNumber from '../utils.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const genDataForGame = () => {
-  const randomNumber = genNumber(0, 100);
-  let isNumberPrime = (randomNumber === 2);
-  for (let i = 2; i < randomNumber; i += 1) {
-    if (randomNumber % i !== 0) {
-      isNumberPrime = true;
-    } else if (randomNumber % i === 0) {
-      isNumberPrime = false;
+const isNumberPrime = (number) => {
+  let result = (number === 2);
+  for (let i = 2; i < number; i += 1) {
+    if (number % i !== 0) {
+      result = true;
+    } else if (number % i === 0) {
+      result = false;
       break;
     }
   }
-  const rightAnswer = (isNumberPrime) ? 'yes' : 'no';
+  return result;
+};
+
+const genDataForGame = () => {
+  const randomNumber = genNumber(0, 100);
+  const rightAnswer = (isNumberPrime(randomNumber)) ? 'yes' : 'no';
   const question = randomNumber;
-  return [String(question), String(rightAnswer)];
+  return [String(question), rightAnswer];
 };
 
 const runGame = () => {

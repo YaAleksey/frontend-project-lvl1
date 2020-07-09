@@ -4,11 +4,12 @@ import genNumber from '../utils.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const isNumberEven = (number) => (number % 2 === 0);
+
 const genDataForGame = () => {
   const question = genNumber(0, 100);
-  const isNumberEven = (question % 2 === 0);
-  const rightAnswer = (isNumberEven) ? 'yes' : 'no';
-  return [String(question), String(rightAnswer)];
+  const rightAnswer = (isNumberEven(question)) ? 'yes' : 'no';
+  return [String(question), rightAnswer];
 };
 
 const runGame = () => {
