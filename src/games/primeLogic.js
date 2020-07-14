@@ -5,22 +5,20 @@ import genNumber from '../utils.js';
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isNumberPrime = (number) => {
-  let result = (number === 2);
+  if (number < 2) {
+    return false;
+  }
   for (let i = 2; i < number; i += 1) {
-    if (number % i !== 0) {
-      result = true;
-    } else if (number % i === 0) {
-      result = false;
-      break;
+    if (number % i === 0) {
+      return false;
     }
   }
-  return result;
+  return true;
 };
 
 const genDataForGame = () => {
-  const randomNumber = genNumber(0, 100);
-  const rightAnswer = (isNumberPrime(randomNumber)) ? 'yes' : 'no';
-  const question = randomNumber;
+  const question = genNumber(0, 100);
+  const rightAnswer = (isNumberPrime(question)) ? 'yes' : 'no';
   return [String(question), rightAnswer];
 };
 

@@ -6,30 +6,26 @@ const task = 'What is the result of the expression?';
 
 const operations = '+-*';
 
-const isAnswerCalcOperation = (number1, number2) => {
-  const maxIndex = operations.length - 1;
-  const randomIndex = genNumber(0, maxIndex);
-  let result = 0;
-  const arrayCount = [];
-  switch (operations[randomIndex]) {
+const getRightAnswer = (number1, number2, operation) => {
+  switch (operation) {
     case '-':
-      result = number1 - number2;
-      break;
+      return number1 - number2;
     case '+':
-      result = number1 + number2;
-      break;
+      return number1 + number2;
+    case '*':
+      return number1 * number2;
     default:
-      result = number1 * number2;
-      break;
+      return console.log('Error:did not find operation!');
   }
-  arrayCount.push(result, operations[randomIndex]);
-  return arrayCount;
 };
 
 const genDataForGame = () => {
+  const maxIndex = operations.length - 1;
+  const randomIndex = genNumber(0, maxIndex);
+  const operation = operations[randomIndex];
   const firstNumber = genNumber(0, 100);
   const secondNumber = genNumber(0, 100);
-  const [rightAnswer, operation] = isAnswerCalcOperation(firstNumber, secondNumber);
+  const rightAnswer = getRightAnswer(firstNumber, secondNumber, operation);
   const question = `${firstNumber} ${operation} ${secondNumber}`;
 
   return [question, String(rightAnswer)];
