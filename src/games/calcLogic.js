@@ -6,7 +6,7 @@ const task = 'What is the result of the expression?';
 
 const operations = '+-*';
 
-const getRightAnswer = (number1, number2, operation) => {
+const calculate = (number1, number2, operation) => {
   switch (operation) {
     case '-':
       return number1 - number2;
@@ -15,7 +15,7 @@ const getRightAnswer = (number1, number2, operation) => {
     case '*':
       return number1 * number2;
     default:
-      return console.log('Error:did not find operation!');
+      throw new Error('Error:did not find operation!');
   }
 };
 
@@ -25,7 +25,7 @@ const genDataForGame = () => {
   const operation = operations[randomIndex];
   const firstNumber = genNumber(0, 100);
   const secondNumber = genNumber(0, 100);
-  const rightAnswer = getRightAnswer(firstNumber, secondNumber, operation);
+  const rightAnswer = calculate(firstNumber, secondNumber, operation);
   const question = `${firstNumber} ${operation} ${secondNumber}`;
 
   return [question, String(rightAnswer)];
